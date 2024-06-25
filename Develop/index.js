@@ -1,5 +1,8 @@
+// index.js
+
 const fs = require("fs");
 const inquirer = require("inquirer");
+const { Circle, Triangle, Square } = require("./lib/shapes");
 
 const questions = [
   {
@@ -29,23 +32,23 @@ const questions = [
 
 inquirer.prompt(questions).then((answers) => {
   const { text, textColor, shape, shapeColor } = answers;
-  let shapeSVG = "";
+  let shapeInstance;
 
   switch (shape) {
     case "circle":
-      shapeSVG = `<circle cx="150" cy="100" r="50" fill="${shapeColor}" />`;
+      shapeInstance = new Circle(shapeColor);
       break;
     case "triangle":
-      shapeSVG = `<polygon points="150,50 100,150 200,150" fill="${shapeColor}" />`;
+      shapeInstance = new Triangle(shapeColor);
       break;
     case "square":
-      shapeSVG = `<rect x="100" y="50" width="100" height="100" fill="${shapeColor}" />`;
+      shapeInstance = new Square(shapeColor);
       break;
   }
 
   const svgContent = `
     <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-      ${shapeSVG}
+      ${shapeInstance.render()}
       <text x="150" y="125" font-size="40" text-anchor="middle" fill="${textColor}">${text}</text>
     </svg>
   `;
