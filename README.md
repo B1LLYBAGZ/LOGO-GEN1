@@ -23,6 +23,8 @@ Clone this repository (if using Git).
 
 Run npm install (or yarn install) in the project directory to install the required dependencies: fs (Node.js built-in file system module) and inquirer (for interactive prompts).
 
+[Untitled_ Jun 25, 2024 10_43 PM (1).webm](https://github.com/B1LLYBAGZ/LOGO-GEN1/assets/164563465/ff15d538-0ea9-4259-a85e-c6bb7623f071)
+
 ## License
 
 This project is licensed under the [None]() license.
